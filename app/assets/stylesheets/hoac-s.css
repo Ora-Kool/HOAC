@@ -16,6 +16,10 @@ nav{
 	color: #ffffff;
 
 }
+
+.flush-bottom{
+	margin-bottom: 90px;
+}
 #get-started{
 	margin-top: 100px;
 }
@@ -154,4 +158,16 @@ background-color: #004d40;
 .success > p{
 	padding-top: 10px;
 	color: #004d40;
+}
+.danger{
+	margin-top: 5px;
+	height: 50px;
+	background-color: #ff8a80;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.danger > p{
+	padding-top: 10px;
+	color: #d50000;
 }
