@@ -1,0 +1,38 @@
+<nav>
+  <div id="sign-login-header">
+ 
+    <div class="top-bar-right">
+    <ul class="menu">
+      <!--<li><a href="#" class="sign" id="fr">EN</a></li>-->
+
+      
+      
+      <li><%= link_to 'logout',  class: 'button small-10 log' %></li>
+      <li><%= link_to 'profile', '#' %></li>
+      <li><%= link_to 'settings', '#' %></li>
+
+
+      <li><%= link_to "sign up", signup_path, class: 'button small-10 sign' %></li>
+      <li><%= link_to 'log in', class: 'button small-10 log' %></li>
+
+
+    </ul>
+  </div>
+  </div>
+
+  <div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li><%= link_to '', "#",class: 'logo' %></li>
+    </ul>
+  </div>
+  <div class="menu-centered">
+    <ul class="menu center-menu"  id="horizontal-center">
+      <li><%= link_to "HOME", root_path %></li>
+      <li><%= link_to "ABOUT", about_path%></li>
+       <li><%= link_to "HOW IT WORKS",  how_it_works_path%></li>
+        
+    </ul>
+  </div>
+</div>
+</nav>

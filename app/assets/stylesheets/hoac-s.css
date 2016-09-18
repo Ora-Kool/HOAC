@@ -1,0 +1,157 @@
+nav{
+	width: 100%;
+	position: relative;
+}
+.button{
+	background-color: #004d40;
+}
+.button:hover{
+	background-color: #00695c;
+}
+.sign, .log {
+	margin-top: 5px;
+	font-size: 13px;
+	text-transform: capitalize;
+	border-radius: 4px;
+	color: #ffffff;
+
+}
+#get-started{
+	margin-top: 100px;
+}
+#imagebackground{
+	background: url('/assets/bgimage.png') no-repeat;
+	height: 500px;
+	margin: 0;
+	image-rendering: optimizeQuality;
+}
+#fr{
+	background-color: inherit;
+	color: #ffffff;
+}
+#hcrcolor{
+	color: #ffffff;
+}
+#fr:hover{
+	background-color: #000000;
+}
+.sign{
+	margin-right: 20px;
+	background-color: inherit;
+	color: #ffffff;
+}
+.sign:hover{
+background-color: #4db6ac;
+}
+.log{
+	margin-right: 100px;
+	background-color: inherit;
+}
+.log:hover{
+	background-color: #4db6ac;
+}
+
+#horizontal-center li a{
+	margin-right: 20px;
+	font-family: "Times New Roman", Times, serif;
+	color: #000000;
+	
+}
+#horizontal-center li a:hover{
+	font-family: "Times New Roman", Times, serif;
+	color: #ffffff;
+	background-color: #004d40;
+}
+#sign-login-header{
+	height: 55px;
+	background-color: #004d40;
+	width: inherit;
+	position: relative;
+}
+.center-menu{
+	margin-top: 12px;
+	margin-left: 20px;
+}
+
+.logo{
+	border-radius: 150px;
+	width: 100px;
+	height: 100px;
+	color: #ffffff;
+	background-color: #ffffff;
+	margin-top: -60px;
+	position: relative;
+	
+}
+.selectable p:hover{
+	cursor: pointer;
+}
+.slider-top{
+	background-color: wheat;
+	background-size: contain;
+	height: 565px;
+	position: relative;
+	transition-timing-function: ease;
+
+}
+.slider-top img{
+	width: 100%;
+	height: 500px;
+}
+.treated-cases{
+	background: #80cbc4;
+	background-size: cover;
+	width: 100%;
+}
+.treated-cases h1{
+	text-align: center;
+	color: #ffffff;
+}
+.available-doctors{
+text-align: center;
+}
+.th a:hover{
+ background-color: transparent;
+}
+.footerInner{
+	margin-left: 20px;
+}
+.footerInner li a{
+ margin-left: 50px;
+ font-size: 15px;
+ font-family: "Times New Roman", Times, serif;
+ color: #000000;
+}
+.footerInner li a:hover{
+background-color: #004d40;
+}
+.separators{
+	margin-top: 90px;
+}
+.top-bar-right > .menu{
+	margin-top: 5px;
+}
+.top-bar-right ul li a{
+	color: #ffffff;
+}
+.center-text{
+	text-align: center;
+}
+.error_explanation{
+	color: #d50000;
+}
+.simple{
+	text-align: center;
+}
+
+.success{
+	margin-top: 5px;
+	height: 50px;
+	background-color: #e8f5e9;
+	text-align: center;
+	border-radius: 4px;
+}
+.success > p{
+	padding-top: 10px;
+	color: #004d40;
+}

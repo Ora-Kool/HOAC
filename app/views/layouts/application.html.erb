@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "hoac.com" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation/foundation.js"></script>
+    <script src="js/foundation/foundation.alert.js"></script>
+
+    <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+  </script>
+<![endif]-->
+  </head>
+
+  <body>
+      <%= render 'hoac_users/shared/hoacheader' %>
+      <div class="large-6 large-offset-3">
+      <% flash.each do |message_type, message| %>
+        <div class="<%= message_type %>">
+        
+        <p><%= message %></p>
+          
+        </div>
+      <% end %>
+  </div>
+    <%= yield %>
+  </body>
+</html>
