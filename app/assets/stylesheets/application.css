@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
+ *= require jquery-ui
+ *= require foundation
+ 
  */
- @import "foundation";
- @import "foundation/components/dropdown";
+
+ @import "foundation_and_overrides";

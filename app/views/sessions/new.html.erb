@@ -9,7 +9,10 @@
       	<%= f.label :password %>
       	<%= f.password_field :password%>
 
-      <%= f.submit "Log in", class: "button large-12 hoaccolor" %>
+      	<!--<%= f.check_box :remember_me %>
+      	<span>Remember me</span>-->
+
+      <%= f.submit "Log in", class: "button large-12" %>
     <% end %>
 	</div>
 </div>
@@ -20,5 +23,6 @@
 	</div>
 </div>
 
+	
 
 <%= render 'hoac_users/shared/hoacfooter' %>

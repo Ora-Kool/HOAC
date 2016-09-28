@@ -1,0 +1,28 @@
+<%provide(:title, 'log in') %>
+<div class="row">
+  <div class="large-6 large-offset-3 columns">
+    <center><h1>Log in</h1></center>
+    <%= form_for(:session, url: sign_in_path) do |f| %>
+        <%= f.label :uid %>
+        <%= f.text_field :uid%>
+
+        <%= f.label :password %>
+        <%= f.password_field :password%>
+
+        <!--<%= f.check_box :remember_me %>
+      	<span>Remember me</span>-->
+
+        <%= f.submit "Log in", class: "button large-12" %>
+    <% end %>
+  </div>
+</div>
+<div class="row flush-bottom">
+  <div class="large-12 columns center-text">
+    <h3>OR</h3>
+    <p>New user ? <span><%= link_to 'sign up now!', signup_path%></span></p>
+  </div>
+</div>
+
+
+
+<%= render 'hoac_users/shared/hoacfooter' %>

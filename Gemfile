@@ -15,9 +15,13 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'jquery-turbolinks'
+
 gem 'foundation-rails' #use for styling 
 
 gem 'bcrypt' #for encrypting users passwords
+
+gem 'jquery-ui-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

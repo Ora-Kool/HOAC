@@ -1,6 +1,86 @@
 <%provide(:title, @user.name)  %>
 
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name.downcase %>
-</h1>
+<div class="row">
+<!-- the left content menu -->
+	<div class="large-3 columns basic-details">
+	<!-- the section where user profile and other stuffs will be placed-->
+		<div class="row profile">
+				<div class="small-5 columns">
+					<!--<%= gravatar_for @user %>-->
+					<%= image_tag('images.jpg') %>
+				</div>
+					<div class="small-7 columns" style="text-align: left">
+						<h4><%=@user.name.capitalize %></h4>
+						<p>edit</p>
+					</div>
+						
+
+		</div>
+  		
+  		<hr>
+  		<!-- a list that user can switched from -->
+  		<div class="row  side-bar-items ">
+  		 <div class="large-10 columns">
+  			<ul class="menu vertical large-12">
+  				<li><a href="#" class="button">Appointments</a></li>
+  				<li><a href="#" class="button">Notifications</a></li>
+  				<hr>
+  				<li><a href="#" class="button">Hospitals</a></li>
+  				<li><a href="#" class="button">Find Doctors</a></li>
+  				<hr>
+  				<li><a href="#" class="button">About Me</a></li>
+			</ul>
+		  </div>
+		 
+		</div>
+
+	</div>
+	<!-- main content div where doctors list will be displayed-->
+	<div class="large-9 columns" id="main-content">
+		
+		<div class="row">
+			<div class="large-7 columns">
+				<% @doctor.each do |t| %>
+				<div class="large-12 columns"  id="doctors">
+				 <div class="row">
+				 	<div class="large-5 columns">
+				 		<a href="#">
+						<!--<%= gravatar_for @user %>-->
+						<%= image_tag('images.jpg') %>
+						</a>
+				 	</div>
+				 	<div class="large-7 columns">
+				 		<h4>Dr <%=t.uid%></h4>
+					<p>Therapist</p>
+					<p>General Hospital Yaoundé</p>
+					<p> Mon - Fri </p>
+					 <center><p>book appointment</p></center>
+				 	</div>
+
+				 </div>
+					
+				</div>
+				<% end -%>
+				
+			</div>
+			<!-- The right side bar where news feed and other stuffs can be placed-->
+			<div class="large-5 columns">
+			<div class="row">
+				<div class="large-12 columns"  id="doctors" >
+					<h1>right</h1>
+					<h4>Other Stuffs</h4>
+					<h4>Other Stuffs</h4>
+					<h4>Other Stuffs</h4>
+					<h4>Other Stuffs</h4>
+					<h4>Other Stuffs</h4>
+				</div>
+				<div class="large-12 columns">
+					<p>privacy . terms</p>
+
+				</div>
+			</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

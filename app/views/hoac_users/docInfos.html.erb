@@ -1,0 +1,11 @@
+<%= provide(:title, "Doctor's Info") %>
+<div class="large-6 large-offset-3">
+  <% flash.each do |message_type, message| %>
+      <div class="<%= message_type %>">
+
+        <p><%= message %></p>
+
+      </div>
+  <% end %>
+</div>
+<h1>Doctor's Details</h1>

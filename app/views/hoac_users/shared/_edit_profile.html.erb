@@ -1,0 +1,65 @@
+<%= form_for @user do |f| %>
+	<%= render 'hoac_users/shared/error_messages', object: @user %>
+      <%= f.label "Profile Name" %>
+      <%= f.text_field :name %>
+      <div class="row">
+            <div class="large-6 columns">
+                  <%= f.label "First Name" %>
+                  <%= f.text_field :first_name %>
+            </div>
+            <div class="large-6 columns">
+                    <%= f.label "Last Name" %>
+                    <%= f.text_field :last_name %>
+            </div>
+      </div>
+      
+
+      <h4>Personal Infos</h4>
+      <%= f.label "Date Of Birth" %>
+      <%= f.text_field :dob, id: 'dob' %>
+
+      
+      <%= f.label "Gender" %>
+      <div class="row">
+            <div class="large-2 columns">
+            <div class="row">
+                  <div class="large-2 columns">
+                         <%= f.label "Male" %>
+                        <%= f.radio_button(:gender, 'M')%>
+
+                  </div>
+                  <div class="large-2 columns">
+                        <%= f.label "Female" %>
+                        <%= f.radio_button(:gender, 'F')%>
+
+                  </div>
+            </div>
+                 
+            </div>
+      </div>
+
+      <h4>Contact Info</h4>
+      <%= f.label :city %>
+      <%= f.text_field :city, placeholder: "enter your city here" %>
+
+      <%= f.label :street %>
+      <%= f.text_field :street, placeholder: 'enter your street here'%>
+
+      <%= f.label "Mobile Number" %>
+      <%= f.text_field :mobile_number %>
+      
+     <!-- <%= f.label :email %>
+      <%= f.email_field :email %>-->
+
+    <h4>Security</h4>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+
+
+      <center><%= f.submit yield(:button_text), class: "button", style: "border-radius: 2px" %></center>
+<% end %>
