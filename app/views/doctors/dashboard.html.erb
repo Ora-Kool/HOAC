@@ -1,3 +1,9 @@
 <% provide(:title, "Doctor001") %>
 <h4>Welcome</h4>
 <h1>You are now a doctor</h1>
+
+<% @appointments.each do |list| %>
+ <h1><%=list.name%></h1>
+    <h4><%=list.hoac_user.name%></h4>
+
+<%end%>

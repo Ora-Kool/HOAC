@@ -35,6 +35,8 @@
 		</div>
 
 	</div>
+
+
 	<!-- main content div where doctors list will be displayed-->
 	<div class="large-9 columns" id="main-content">
 		
@@ -44,13 +46,11 @@
 				<div class="large-12 columns"  id="doctors">
 				 <div class="row">
 				 	<div class="large-5 columns">
-				 		<a href="#">
-						<!--<%= gravatar_for @user %>-->
 						<%= image_tag('images.jpg') %>
-						</a>
 				 	</div>
 				 	<div class="large-7 columns">
 				 		<h4>Dr <%=t.uid%></h4>
+            <%= link_to 'Details', profile_path%>
 					<p>Therapist</p>
 					<p>General Hospital Yaoundé</p>
 					<p> Mon - Fri </p>
@@ -63,6 +63,8 @@
 				<% end -%>
 				
 			</div>
+
+
 			<!-- The right side bar where news feed and other stuffs can be placed-->
 			<div class="large-5 columns">
 			<div class="row">

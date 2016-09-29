@@ -5,7 +5,14 @@ class DoctorsController < ApplicationController
 
   def dashboard
     @doctor = Doctor.find(params[:id])
+    @appointments = @doctor.appointments.all
   end
+
+  def profile
+    @doctor = Doctor.find(params[:id])
+  end
+
+
 
 
 end

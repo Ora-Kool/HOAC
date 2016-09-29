@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   delete '/sign-out', to: 'doctor_sessions#destroy'
 
   get '/doctors/:id', to: 'doctors#dashboard'
+  get '/doctor/:id', to: 'doctors#profile', as: :profile
 
 
 

@@ -1,6 +1,7 @@
 class Doctor < ApplicationRecord
   attr_accessor :remember_token
   has_many :appointments
+  has_many :hoac_users
   #before_save { self.email = email.downcase }
   #before_save { self.name = name.downcase }
   validates :uid, presence: true, length: { minimum: 4 },
@@ -33,7 +34,7 @@ class Doctor < ApplicationRecord
     SecureRandom.urlsafe_base64
   end
 
-  #Remembers a HoacUser in the database for use in persistent sessions
+  #Remembers a Doctor in the database for use in persistent sessions
   def remember_doctor
     self.remember_token = Doctor.new_token
     update_attribute(:remember_digest, Doctor.digest(remember_token))
@@ -45,7 +46,7 @@ class Doctor < ApplicationRecord
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
-  #Forgets a user
+  #Forgets a Doctor
   def forget_doctor
     update_attribute(:remember_digest, nil)
   end
