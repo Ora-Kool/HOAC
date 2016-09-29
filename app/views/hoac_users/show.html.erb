@@ -11,6 +11,7 @@
 				</div>
 					<div class="small-7 columns" style="text-align: left">
 						<h4><%=@user.name.capitalize %></h4>
+            <h4><%=@user.id%></h4>
 						<p>edit</p>
 					</div>
 						
@@ -42,7 +43,7 @@
 		
 		<div class="row">
 			<div class="large-7 columns">
-				<% @doctor.each do |t| %>
+				<% @doctors.each do |t| %>
 				<div class="large-12 columns"  id="doctors">
 				 <div class="row">
 				 	<div class="large-5 columns">
@@ -50,18 +51,18 @@
 				 	</div>
 				 	<div class="large-7 columns">
 				 		<h4>Dr <%=t.uid%></h4>
-            <%= link_to 'Details', profile_path%>
+            <%= link_to 'Details', profile_path(t.id)%>
 					<p>Therapist</p>
 					<p>General Hospital Yaoundé</p>
 					<p> Mon - Fri </p>
-					 <center><p>book appointment</p></center>
+					 <div style="text-align: center;"><%= link_to 'book appointment', new_hoac_user_doctor_appointment_path(@user.id, t.id)%></p></div>
 				 	</div>
 
 				 </div>
 					
 				</div>
 				<% end -%>
-				
+
 			</div>
 
 

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   root 'static_pages#home'
 
   get '/about', to: 'static_pages#about'
@@ -27,8 +25,15 @@ Rails.application.routes.draw do
 
 
 
+
   resources :hoac_users
   resources :doctors
+
+  resources :hoac_users do
+    resources :doctors do
+      resources :appointments
+    end
+  end
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -19,11 +19,17 @@ module DoctorSessionsHelper
   # Returns the user corresponding to the remember token cookie.
   def current_doctor
     if (doctor_id = session[:doctor_id])
-      @current_doctor ||= Doctor.find_by(id: session[:doctor_id])
+
+      @current_doctor ||= Doctor.find_by(id: doctor_id)
+
     elsif (doctor_id = cookies.signed[:doctor_id])
+
       doctor = Doctor.find_by(id: doctor_id)
+
       if doctor && doctor.authenticated?(cookies[:remember_token])
+
         log_in_doctor doctor
+
         @current_doctor = doctor
       end
     end

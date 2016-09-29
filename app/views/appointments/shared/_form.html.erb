@@ -1,0 +1,10 @@
+<%= form_for([@patient, @doctor, @appointment], :url => hoac_user_doctor_appointments_path) do |f| %>
+    <%= render 'hoac_users/shared/error_messages', object: f.object %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.hidden_field :hoac_user_id, value: @patient.id %>
+    <%= f.hidden_field :doctor_id, value: @doctor.id %>
+
+    <%= f.submit yield(:button_text), class: "button large-12" %>
+<% end%>
+

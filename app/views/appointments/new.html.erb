@@ -1,0 +1,8 @@
+<%provide(:title, "Appointment") %>
+<%provide(:button_text, 'Shedule Appointment') %>
+<div class="row">
+  <div class="large-6 large-offset-3 columns">
+    <div style="text-align: center;"><h1>Sheduling Appointment with Dr <%=@doctor.uid.to_s%></h1></div>
+    <%= render 'appointments/shared/form' %>
+  </div>
+</div>

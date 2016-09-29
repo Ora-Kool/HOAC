@@ -2,13 +2,14 @@ class HoacUsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show] #this prevent users trying to access restricted
   #pages
   before_action :correct_user, only: [:edit, :update, :show] #prevent current user from editing others infos or see it
+  before_action :find_user
   def index
     redirect_to signup_path
   end
 
    def show
-   	 @user = HoacUser.find(params[:id])
-     @doctor = Doctor.all
+   	 #@user = HoacUser.find(params[:id])
+     @doctors = Doctor.all
    end
   def new
   	@user = HoacUser.new
@@ -26,12 +27,9 @@ class HoacUsersController < ApplicationController
   end
 
   def edit
-    @user = HoacUser.find(params[:id])
-
   end
 
   def update
-    @user = HoacUser.find(params[:id])
     if @user.update_attributes(edit_profile)
       flash[:success] = "Profile updated!"
       redirect_to @user
@@ -41,7 +39,7 @@ class HoacUsersController < ApplicationController
   end
 
   def destroy
-    HoacUser.find(params[:id]).destroy
+    @user.destroy
     flash[:success] = "User deleted"
     redirect_to current_user
   end
@@ -59,6 +57,10 @@ class HoacUsersController < ApplicationController
                                       :first_name, :last_name,
                                       :mobile_number, :dob,
                                       :gender, :password, :password_confirmation)
+  end
+
+  def find_user
+    @user = HoacUser.find(params[:id])
   end
 
 
