@@ -2,6 +2,7 @@ class Doctor < ApplicationRecord
   attr_accessor :remember_token
   has_many :appointments
   has_many :hoac_users
+  belongs_to :department
   #before_save { self.email = email.downcase }
   #before_save { self.name = name.downcase }
   validates :uid, presence: true, length: { minimum: 4 },

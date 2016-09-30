@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/doctors/:id', to: 'doctors#dashboard'
   get '/doctor/:id', to: 'doctors#profile', as: :profile
 
+  get '/hoac_user_appointments/:id', to: 'appointments#list', as: :users_appointments
+  get '/appointment_details/:id', to:'appointments#show', as: :appointment_details
 
 
 
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
 
   resources :hoac_users do
     resources :doctors do
-      resources :appointments
+      resources :appointments, except: [:index]
     end
   end
 

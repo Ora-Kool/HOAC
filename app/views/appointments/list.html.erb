@@ -1,0 +1,14 @@
+<%provide(:title, "All Appointments") %>
+<h4>I am index page</h4>
+<%if @appointments.empty? %>
+    <h4>List Is Empty</h4>
+    <%else%>
+    <h4>Displaying Appointments</h4>
+    <% @appointments.each do |appointment| %>
+        <h4>Dr. <%= appointment.doctor.uid %> <%= ", appointment => " %><%= appointment.name %>
+        <%= link_to "View", appointment_details_path(appointment.id), style: 'color: blue'%>
+        </h4>
+
+        <%end%>
+<% end%>
+

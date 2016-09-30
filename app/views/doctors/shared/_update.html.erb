@@ -1,0 +1,20 @@
+<%= form_for @doctor do |f| %>
+    <%= render 'hoac_users/shared/error_messages', object: f.object %>
+    <%= f.label :uid %>
+    <%= f.text_field :uid %>
+
+
+    <%= f.label "Department" %>
+    <%= f.collection_select :department_id, Department.all, :id, :department_name, prompt: "Select department" %>
+
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+
+
+    <%= f.submit yield(:button_text), class: "button large-12" %>
+<% end %>

@@ -23,7 +23,7 @@
   		<div class="row  side-bar-items ">
   		 <div class="large-10 columns">
   			<ul class="menu vertical large-12">
-  				<li><a href="#" class="button">Appointments</a></li>
+  				<li><%= link_to "Appointments", users_appointments_path , class: 'button'%></li>
   				<li><a href="#" class="button">Notifications</a></li>
   				<hr>
   				<li><a href="#" class="button">Hospitals</a></li>
@@ -43,19 +43,19 @@
 		
 		<div class="row">
 			<div class="large-7 columns">
-				<% @doctors.each do |t| %>
+				<% @doctors.each do |doctor| %>
 				<div class="large-12 columns"  id="doctors">
 				 <div class="row">
 				 	<div class="large-5 columns">
 						<%= image_tag('images.jpg') %>
 				 	</div>
 				 	<div class="large-7 columns">
-				 		<h4>Dr <%=t.uid%></h4>
-            <%= link_to 'Details', profile_path(t.id)%>
-					<p>Therapist</p>
+				 		<h4>Dr <%=doctor.uid%></h4>
+            <%= link_to 'Details', profile_path(doctor.id)%>
+					<p><%=doctor.department.department_name %></p>
 					<p>General Hospital Yaoundé</p>
 					<p> Mon - Fri </p>
-					 <div style="text-align: center;"><%= link_to 'book appointment', new_hoac_user_doctor_appointment_path(@user.id, t.id)%></p></div>
+					 <div style="text-align: center;"><%= link_to 'book appointment', new_hoac_user_doctor_appointment_path(@user.id, doctor.id)%></p></div>
 				 	</div>
 
 				 </div>

@@ -1,10 +1,20 @@
 class AppointmentsController < ApplicationController
 before_action :logged_in_user, only: [:create, :new]
-before_action :find_patient
+before_action :find_patient, only: [:new, :create]
+
+  def list
+    @user = HoacUser.find(params[:id])
+    @appointments = @user.appointments.all
+  end
+
+  def show
+   @appointment = Appointment.find(params[:id])
+  end
+
   def new
    @appointment = Appointment.new
-   @patient = HoacUser.find(params[:hoac_user_id] || params[:id])
-   @doctor = Doctor.find(params[:doctor_id] || params[:id])
+   #@patient = HoacUser.find(params[:hoac_user_id] || params[:id])
+  # @doctor = Doctor.find(params[:doctor_id] || params[:id])
   end
 
   def create
@@ -25,8 +35,11 @@ before_action :find_patient
 def find_patient
   @patient = HoacUser.find(params[:hoac_user_id] || params[:id])
   @doctor = Doctor.find(params[:doctor_id] || params[:id])
-
 end
+
+
+
+
 
 
   #confirm  the current user

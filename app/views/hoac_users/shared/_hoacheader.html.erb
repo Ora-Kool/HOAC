@@ -32,6 +32,7 @@
               <li><%= link_to 'logout', sign_out_path, method: "delete", style: 'color: #000000' %></li>
 
               <li><%= link_to 'Settings', edit_doctor_path(current_doctor), style: 'color: #000000' %></li>
+              <li><%= link_to 'More', edit_doctor_path(current_doctor), style: 'color: #000000' %></li>
               <!-- ... -->
             </ul>
           </li>
@@ -55,8 +56,20 @@
   <div class="menu-centered">
     <ul class="menu center-menu"  id="horizontal-center">
       <li><%= link_to "HOME", root_path %></li>
+
+      <% if logged_in? %>
       <li><%= link_to "PATIENT?", about_path%></li>
        <li><%= link_to "DOCTOR?",  sign_in_path%></li>
+
+          <% elsif logged_in_doctor?%>
+
+          <li><%= link_to "DASHBOARD", about_path%></li>
+          <li><%= link_to "NOTIFICATIONS",  sign_in_path%></li>
+
+          <%else%>
+          <li><%= link_to "PATIENT?", about_path%></li>
+          <li><%= link_to "DOCTOR?",  sign_in_path%></li>
+          <%end%>
         
     </ul>
   </div>
