@@ -1,18 +1,19 @@
 <%provide(:title, @user.name)  %>
 
-<div class="row">
+
 <!-- the left content menu -->
-	<div class="large-3 columns basic-details">
+<div class="large-3 columns" style="background-color: #BBBBBB">
 	<!-- the section where user profile and other stuffs will be placed-->
-		<div class="row profile">
-				<div class="small-5 columns">
-					<!--<%= gravatar_for @user %>-->
-					<%= image_tag('images.jpg') %>
+		<div class="row" style="margin-bottom: 10px;">
+      <h4 style="margin: 10px 0 0 15px;"><%=@user.name.capitalize %></h4>
+      <div class="large-12 columns"><hr></div>
+				<div class="small-6 columns">
+					<%= image_tag('images.jpg', style: "border-radius: 100px") %>
 				</div>
-					<div class="small-7 columns" style="text-align: left">
-						<h4><%=@user.name.capitalize %></h4>
-            <h4><%=@user.id%></h4>
-						<p>edit</p>
+					<div class="small-6 columns">
+            <p><%= @user.email%></p>
+            <p><%= @user.mobile_number%></p>
+            <p><%= "#{@user.city}, #{@user.street}"%></p>
 					</div>
 						
 
@@ -20,29 +21,26 @@
   		
   		<hr>
   		<!-- a list that user can switched from -->
-  		<div class="row  side-bar-items ">
-  		 <div class="large-10 columns">
+  <div class="row  side-bar-items ">
+    <div class="large-10 columns" style="margin-bottom: 10px">
   			<ul class="menu vertical large-12">
-  				<li><%= link_to "Appointments", users_appointments_path , class: 'button'%></li>
-  				<li><a href="#" class="button">Notifications</a></li>
+          <li><a href="#" class="button">Hospitals</a></li>
   				<hr>
-  				<li><a href="#" class="button">Hospitals</a></li>
   				<li><a href="#" class="button">Find Doctors</a></li>
-  				<hr>
-  				<li><a href="#" class="button">About Me</a></li>
+          <li><%= link_to "Appointments", users_appointments_path , class: 'button'%></li>
 			</ul>
-		  </div>
+    </div>
 		 
-		</div>
+  </div>
 
-	</div>
+</div>
 
 
 	<!-- main content div where doctors list will be displayed-->
 	<div class="large-9 columns" id="main-content">
 		
 		<div class="row">
-			<div class="large-7 columns">
+			<div class="large-12 columns">
 				<% @doctors.each do |doctor| %>
 				<div class="large-12 columns"  id="doctors">
 				 <div class="row">
@@ -67,7 +65,7 @@
 
 
 			<!-- The right side bar where news feed and other stuffs can be placed-->
-			<div class="large-5 columns">
+			<!--<div class="large-5 columns">
 			<div class="row">
 				<div class="large-12 columns"  id="doctors" >
 					<h1>right</h1>
@@ -83,7 +81,7 @@
 				</div>
 			</div>
 				
-			</div>
+			</div>-->
 		</div>
 	</div>
-</div>
+

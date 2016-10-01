@@ -3,8 +3,9 @@ class Doctor < ApplicationRecord
   has_many :appointments
   has_many :hoac_users
   belongs_to :department
-  #before_save { self.email = email.downcase }
-  #before_save { self.name = name.downcase }
+  before_save { self.email = email.downcase }
+  before_save { self.first_name = first_name.downcase }
+  before_save { self.last_name = last_name.downcase }
   validates :uid, presence: true, length: { minimum: 4 },
             numericality: true
 

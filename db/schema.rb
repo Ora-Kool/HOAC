@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160930033234) do
+ActiveRecord::Schema.define(version: 20161001003536) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "name"
     t.integer  "hoac_user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "doctor_id"
+    t.date     "appointment_date"
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["hoac_user_id"], name: "index_appointments_on_hoac_user_id"
   end
@@ -29,13 +30,15 @@ ActiveRecord::Schema.define(version: 20160930033234) do
   end
 
   create_table "doctors", force: :cascade do |t|
-    t.string   "name"
     t.integer  "department_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "uid"
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
     t.index ["department_id"], name: "index_doctors_on_department_id"
   end
 

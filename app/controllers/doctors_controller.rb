@@ -1,17 +1,31 @@
 class DoctorsController < ApplicationController
-  before_action :find_doctor
-  before_action :logged_in_doctor, only: [:edit, :update]
-  before_action :correct_doctor, only: [:edit, :update]
+  #before_action :find_doctor
+  before_action :logged_in_doctor, only: [:edit, :update, :dashboard]
+  before_action :correct_doctor, only: [:edit, :update, :dashboard]
 
 
-  def index
-    @appointments  = @doctor.appointments.all
-  end
+  #def index
+    #@doctor = Doctor.find(params[:id])
+    #@appointments  = @doctor.appointments.all
+  #end
   def new
     @doctor = Doctor.new
+    @department = Department.all.map{ |department| [department.department_name, department.id]}
+  end
+
+  def create
+    @doctor = Doctor.new(doctor_params)
+    if @doctor.save
+      log_in_doctor @doctor
+      flash[:success] = "Welcome Doctor"
+      redirect_to @doctor
+    else
+        render 'new'
+    end
   end
 
   def dashboard
+    @doctor = Doctor.find(params[:id])
     @appointments = @doctor.appointments.all
   end
 
@@ -20,12 +34,12 @@ class DoctorsController < ApplicationController
   end
 
   def edit
-    @doctor = Doctor.new
-    @department = Department.all
+    @doctor = Doctor.find(params[:id])
   end
 
   def update
-    if @doctor.update_attributes(doctor_params)
+    @doctor = Doctor.find(params[:id])
+    if @doctor.update(doctor_update)
       flash[:success] = "Profile Updated!"
       redirect_to @doctor
     else
@@ -35,7 +49,11 @@ class DoctorsController < ApplicationController
 
   private
   def doctor_params
-    params.require(:doctor).permit(:name, :department_id)
+    params.require(:doctor).permit(:uid, :password, :password_confirmation, :department_id)
+  end
+
+  def doctor_update
+    params.require(:doctor).permit(:department_id, :first_name, :last_name, :email)
   end
 
   def find_doctor

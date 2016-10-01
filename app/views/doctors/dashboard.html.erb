@@ -1,14 +1,15 @@
-<% provide(:title, "Doctor001") %>
-<h4>Welcome</h4>
-<h1>You are now a doctor</h1>
+<% provide(:title, "Dashboard") %>
+<div class="row">
+  <% if @appointments.empty?%>
+  <h4>No appointments made</h4>
+  <%else%>
+   <% @appointments.each do |appointment| %>
+      <div class="large-3 columns" style="background-color: #555555">
+        <h4><%= appointment.name%></h4>
+        <h5><%= appointment.appointment_date%></h5>
+        <h5><%= appointment.hoac_user.first_name%></h5>
+      </div>
 
-<% if @appointments.empty? %>
-    <h4>You have no appointments at the moment</h4>
-<%else%>
-
-    <% @appointments.each do |list| %>
-        <h1><%=list.name%></h1>
-        <h4><%=list.hoac_user.name%></h4>
-
-    <%end%>
-<%end%>
+      <%end%>
+  <%end%>
+</div>

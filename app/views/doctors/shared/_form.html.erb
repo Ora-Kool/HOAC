@@ -1,22 +1,12 @@
 <%= form_for @doctor do |f| %>
     <%= render 'hoac_users/shared/error_messages', object: f.object %>
+    <%= f.label :uid %>
+    <%= f.number_field :uid %>
 
-    <div class="row">
-      <div class="large-6 columns">
-        <%= f.label :first_name%>
-        <%= f.text_field :first_name%>
-      </div>
-      <div class="large-6 columns">
-        <%= f.label :last_name%>
-        <%= f.text_field :last_name%>
-      </div>
-    </div>
 
     <%= f.label "Department" %>
     <%= f.collection_select :department_id, Department.all, :id, :department_name %>
 
-    <%= f.label :email%>
-    <%= f.email_field :email%>
 
     <%= f.label :password %>
     <%= f.password_field :password %>

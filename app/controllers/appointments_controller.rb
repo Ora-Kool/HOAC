@@ -29,7 +29,7 @@ before_action :find_patient, only: [:new, :create]
 
   private
   def appointments_params
-    params.require(:appointment).permit(:name, :hoac_user_id, :doctor_id)
+    params.require(:appointment).permit(:name, :appointment_date, :hoac_user_id, :doctor_id)
   end
 
 def find_patient

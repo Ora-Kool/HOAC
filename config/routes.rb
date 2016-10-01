@@ -18,8 +18,11 @@ Rails.application.routes.draw do
   post '/sign-in', to: 'doctor_sessions#create'
   delete '/sign-out', to: 'doctor_sessions#destroy'
 
-  get '/doctors/:id', to: 'doctors#dashboard'
+  get '/doctors/:id', to: 'doctors#dashboard', as: :dashboard
   get '/doctor/:id', to: 'doctors#profile', as: :profile
+
+  get '/sign-up', to: 'doctors#new'
+  post '/sign-up', to: 'doctors#create'
 
   get '/hoac_user_appointments/:id', to: 'appointments#list', as: :users_appointments
   get '/appointment_details/:id', to:'appointments#show', as: :appointment_details
