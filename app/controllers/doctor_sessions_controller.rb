@@ -6,7 +6,7 @@ class DoctorSessionsController < ApplicationController
     doctor = Doctor.find_by(uid: params[:session][:uid])
     if doctor && doctor.authenticate(params[:session][:password])
       log_in_doctor doctor
-      params[:session][:remember_me] == '1' ? remember_doctor(doctor) : forget_doctor(doctor)
+      #params[:session][:remember_me] == '1' ? remember_doctor(doctor) : forget_doctor(doctor)
       remember_doctor doctor
       redirect_back_or doctor
     else

@@ -27,6 +27,7 @@ class DoctorsController < ApplicationController
   def dashboard
     @doctor = Doctor.find(params[:id])
     @appointments = @doctor.appointments.all
+    @name = @doctor.doctorname
   end
 
   def profile
@@ -81,5 +82,7 @@ class DoctorsController < ApplicationController
       redirect_to sign_in_path
     end
   end
+
+
 
 end

@@ -26,7 +26,7 @@ module DoctorSessionsHelper
 
       doctor = Doctor.find_by(id: doctor_id)
 
-      if doctor && doctor.authenticated?(cookies[:remember_token])
+      if doctor && doctor.authenticated_doctor?(cookies[:remember_token])
 
         log_in_doctor doctor
 

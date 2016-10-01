@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails hoac.com: test" uuid="07a29523-8435-4082-a5ee-d7f510507f9b">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="Rails hoac.com: development" uuid="a105f4b4-c68f-48cc-aa37-9ca8447aa7bd">
+      <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <auth-required>false</auth-required>
-      <first-sync>true</first-sync>
     </data-source>
-    <data-source name="Rails hoac.com: development" uuid="ea34c064-3b66-42d3-bd16-83f17062dbbb">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="Rails hoac.com: test" uuid="eb50be6b-4e41-48f8-a436-3301b01a56e9">
+      <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <auth-required>false</auth-required>
-      <first-sync>true</first-sync>
     </data-source>
   </component>
 </project>

@@ -43,7 +43,7 @@ class Doctor < ApplicationRecord
   end
 
   #Returns true if the given token  matches the digest
-  def authenticated?
+  def authenticated_doctor?(remember_token)
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
@@ -53,5 +53,8 @@ class Doctor < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
+  def doctorname
+    self.first_name
+  end
 
 end
